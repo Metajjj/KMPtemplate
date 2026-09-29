@@ -1,0 +1,93 @@
+[versions]
+agp="9.1.1"
+android-compileSdk = "37"
+android-minSdk = "23"
+
+kotlin = "2.4.20"
+roomVers = "2.8.5"
+
+composeVers = "1.12.0"
+
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+composeHotReload = { id = "org.jetbrains.compose.hot-reload", version = "1.2.0" }
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeVers" }
+newKmpLib = { id="com.android.kotlin.multiplatform.library", version.ref="agp"} #match agp vers
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinAndroid = {id="org.jetbrains.kotlin.android", version.ref="kotlin"}
+dev-ksp = { id = "com.google.devtools.ksp", version = "2.3.2" }
+#Mock for KMP - doesnt need a lib
+mokkery = {id="dev.mokkery", version = "3.5.0" }
+
+#serialise
+serialize = {id="org.jetbrains.kotlin.plugin.serialization", version.ref="kotlin"}
+
+
+[libraries]
+
+#json serialise
+serializable-json = {module="org.jetbrains.kotlinx:kotlinx-serialization-json", version="1.11.0"}
+
+#compose (shifted back after being compose.x)
+compose-runtime={module="org.jetbrains.compose.runtime:runtime", version.ref="composeVers"}
+compose-foundation={module="org.jetbrains.compose.foundation:foundation", version.ref="composeVers"}
+compose-material3={module="org.jetbrains.compose.material3:material3", version="1.9.0"}
+compose-ui={module="org.jetbrains.compose.ui:ui", version.ref="composeVers"}
+compose-ui-tool={module="org.jetbrains.compose.ui:ui-tooling", version.ref="composeVers"}
+compose-ui-toolPrev={module="org.jetbrains.compose.ui:ui-tooling-preview", version.ref="composeVers"}
+compose-ui-test={module= "org.jetbrains.compose.ui:ui-test", version.ref="composeVers" }
+compose-components-resources={module="org.jetbrains.compose.components:components-resources", version.ref="composeVers"}
+
+
+#compose constraint temp
+compose-constraint={module="tech.annexflow.compose:constraintlayout-compose-multiplatform",version="0.8.2"}
+
+#AnimatedNavHost
+#org.jetbrain.xxx version for KMP
+#compose-nav = {module="org.jetbrains.androidx.navigation:navigation-compose", version="2.9.2"}
+#compose-nav-test = {module="androidx.navigation:navigation-testing", version.ref="navVers"}
+#compose-nav-backhandler = {module="org.jetbrains.compose.ui:ui-backhandler", version.ref = "composeVers" }
+
+##Nav3 kmp new 2026
+compose-nav = {module="org.jetbrains.androidx.navigation3:navigation3-ui", version="1.1.1"}
+##viewmodel for nav3
+compose-nav-vm = { module="org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-navigation3", version="2.11.0"}
+
+
+#Koin for DepInj
+bom-koin = {module="io.insert-koin:koin-bom",version="4.2.2"}
+
+koin-core = {module="io.insert-koin:koin-core"}
+koin-test = {module="io.insert-koin:koin-test"}
+koin-compose = {module="io.insert-koin:koin-compose"}
+koin-android = {module="io.insert-koin:koin-android"}
+koin-composevm = { module = "io.insert-koin:koin-compose-viewmodel" }
+
+
+
+#RoomDB
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "roomVers" }
+room-compiler = {group = "androidx.room", name="room-compiler",version.ref = "roomVers" }
+#room-plugin = {module="androidx.room:androidx.room.gradle.plugin", version.ref="roomVers"}
+#SQLite itself
+sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version = "2.7.1" }
+
+
+#kotlinx -- pure versions of libs
+kotlinx-datetime = {module="org.jetbrains.kotlinx:kotlinx-datetime", version="0.8.0"}
+#for coroutine on other platforms
+kotlinx-coroutinesSwing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version = "1.11.0" }
+kotlinx-io-core = {module = "org.jetbrains.kotlinx:kotlinx-io-core", version="0.9.0"}
+
+
+#Tests
+#JUnit4-base @Test etc..
+junit = { group = "junit", name = "junit", version = "4.13.2" }
+#ActivityRuleScenario<> etc.. manage android activities in test auto
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+
+
+

@@ -1,0 +1,13 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="10px" android:width="10px"
+    android:viewportHeight="100" android:viewportWidth="100"
+    >
+    <!-- size it is scaled to by default | drawing space size -->
+
+    <path
+        android:pathData="M10,10 V90 L90,50 Z"
+        android:strokeWidth="0"
+        android:fillColor="#000"
+        />
+
+</vector>

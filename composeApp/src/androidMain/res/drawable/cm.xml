@@ -1,0 +1,59 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:width="50px"
+    android:height="75px"
+    android:viewportWidth="50"
+    android:viewportHeight="75">
+    <!-- size it is scaled to by default | drawing space size -->
+
+    <!-- group for uniform transformations on multiple paths -->
+    <group android:name="Hamburger">
+        <path
+            android:fillColor="#000"
+            android:pathData="M 10,15
+                            v 4
+                            h 35
+                            v -4
+                            Z" />
+        <path
+            android:fillColor="#000"
+            android:pathData="M 10,25
+                            v 4
+                            h 35
+                            v -4
+                            Z" />
+        <path
+            android:fillColor="#000"
+            android:pathData="M 10,35
+                            v 4
+                            h 35
+                            v -4
+                            Z" />
+        <path
+            android:fillColor="#000"
+            android:pathData="M 10,45
+                            v 4
+                            h 35
+                            v -4
+                            Z" />
+    </group>
+
+    <group android:name="plus">
+        <path
+            android:fillColor="#000"
+            android:pathData="M 5,55
+                                v 4
+                                h 25
+                                v -4
+                                z
+                                M 15.5,44.5
+                                h 4
+                                v 25
+                                h -4
+                                z
+" />
+    </group>
+
+
+</vector>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name" translatable="false">
+        <!-- CDATA (character) escapes everything ! pure  cant use ]]> -->
+        <![CDATA[
+            RemindFul
+        ]]>
+    </string>
+
+              <!--false = will never check the -locale- folders-->
+    <string name="Title" translatable="false">RemindFul</string>
+
+    <string name="file" translatable="false">theme.RemindFul</string>
+    <string name="vsR">Recent</string>
+    <string name="vsA" translatable="true">Alphabetical</string>
+
+    <string name="FragTransitionDur">700</string>
+    <string name="GreenTick">#AA32C95E</string>
+
+</resources>

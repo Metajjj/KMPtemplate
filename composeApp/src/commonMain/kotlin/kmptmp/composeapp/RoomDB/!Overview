@@ -1,0 +1,17 @@
+
+ROOM DB - abstraction to SQLITe -> compile-time checks so less runtime tests & errs
+
+
+DATABASE layer - access Data Access Objects
+Data Access Objects - access Entities & send changes to Database
+Entities - Tables to hold and access Column fields
+
+
+@Database
+DBCntrl{
+    @DAO
+    fun GetById
+
+    @Entity
+    ID get() set()
+}
