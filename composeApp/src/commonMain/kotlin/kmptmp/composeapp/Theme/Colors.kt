@@ -53,10 +53,12 @@ class ThemeItfc {
         /**
          * current theme information (source truth)
          */
-        private var currTheme = run {
-            SetupFile()
-            mutableStateOf(ThemesMap.firstNotNullOf { it })
+        private var currTheme = mutableStateOf(ThemesMap.firstNotNullOf { it })
+
+        init{
+            SetupFile() //Let it override currTheme as is since it doesnt crash anymore
         }
+
 
 
         //=============
