@@ -6,7 +6,9 @@ android-minSdk = "23"
 kotlin = "2.4.20"
 roomVers = "2.8.5"
 
-composeVers = "1.12.0"
+composeVers = "1.12.1"
+
+gobleyVers="0.3.7"
 
 
 [plugins]
@@ -18,13 +20,19 @@ newKmpLib = { id="com.android.kotlin.multiplatform.library", version.ref="agp"} 
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinAndroid = {id="org.jetbrains.kotlin.android", version.ref="kotlin"}
-dev-ksp = { id = "com.google.devtools.ksp", version = "2.3.2" }
+dev-ksp = { id = "com.google.devtools.ksp", version = "2.3.6" }
 #Mock for KMP - doesnt need a lib
 mokkery = {id="dev.mokkery", version = "3.5.0" }
 
 #serialise
 serialize = {id="org.jetbrains.kotlin.plugin.serialization", version.ref="kotlin"}
 
+
+#gobley / rust
+    #uniffi (wrap rust in native code to run rust code)
+gobley-uniffi= {id="dev.gobley.uniffi", version.ref="gobleyVers"}
+gobley-cargo={id="dev.gobley.cargo", version.ref="gobleyVers"}
+gobley-atomicfu = { id="org.jetbrains.kotlin.plugin.atomicfu", version.ref="kotlin"}
 
 [libraries]
 
@@ -52,7 +60,7 @@ compose-constraint={module="tech.annexflow.compose:constraintlayout-compose-mult
 #compose-nav-backhandler = {module="org.jetbrains.compose.ui:ui-backhandler", version.ref = "composeVers" }
 
 ##Nav3 kmp new 2026
-compose-nav = {module="org.jetbrains.androidx.navigation3:navigation3-ui", version="1.1.1"}
+compose-nav = {module="org.jetbrains.androidx.navigation3:navigation3-ui", version="1.1.2"}
 ##viewmodel for nav3
 compose-nav-vm = { module="org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-navigation3", version="2.11.0"}
 
@@ -80,7 +88,7 @@ sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version = "2.7.1" 
 kotlinx-datetime = {module="org.jetbrains.kotlinx:kotlinx-datetime", version="0.8.0"}
 #for coroutine on other platforms
 kotlinx-coroutinesSwing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version = "1.11.0" }
-kotlinx-io-core = {module = "org.jetbrains.kotlinx:kotlinx-io-core", version="0.9.0"}
+kotlinx-io-core = {module = "org.jetbrains.kotlinx:kotlinx-io-core", version="0.9.1"}
 
 
 #Tests

@@ -3,13 +3,13 @@ import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 plugins {
 
     //Need this so upgrade assisstant works
-//    id("com.android.application") version "9.1.0"
+    //id("com.android.application") version "9.1.0"
 
     listOf(
 
         //libs.plugins.androidLibrary,
         //libs.plugins.androidApplication,
-        libs.plugins.newKmpLib, //new kmp lib handles it
+        libs.plugins.newKmpLib, //new kmp lib handles androidLibrary/Application usages
 
         libs.plugins.composeHotReload,
         libs.plugins.composeMultiplatform,
@@ -23,6 +23,14 @@ plugins {
 
         //serialiser
         libs.plugins.serialize,
+
+
+        //rust compatibility --- temp not working for latest KMP + AGP 9
+        //gobley fun
+//        libs.plugins.gobley.atomicfu, //for thread-safe/atomic (foundation)
+//        libs.plugins.gobley.cargo, //build + link process (wiring)
+//        libs.plugins.gobley.uniffi, //kotlin <=> rust (action)
+
     ).forEach { alias(it) }
 }
 
@@ -185,3 +193,28 @@ compose.desktop {
         }
     }
 }
+
+
+
+/*
+//Rust
+cargo{
+
+    packageDirectory = layout.projectDirectory.dir("./src/commonMain/rust/myRustDir")
+
+    //jvm/desktop target filter
+    */
+/*builds.jvm{
+        embedRustLibrary = when (rustTarget) {
+
+            GobleyHost.current.rustTarget,
+            RustPosixTarget.LinuxX64,
+            RustPosixTarget.MinGWX64, //windows via gnu
+                -> true
+            else -> false
+        }
+    }*//*
+
+
+}
+*/
